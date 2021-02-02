@@ -1,1 +1,1 @@
-# Django-basic-Applications
+# Django-basic-Application
