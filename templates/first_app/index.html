@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<!-- to load static files -->
-{% load static %}
+<!-- <!DOCTYPE html> -->
+    <!-- to load static files -->
+<!-- {% load static %}
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,8 +8,42 @@
         <link rel="stylesheet" href="{% static "css/mystyles.css" %}"/>
     </head>
     <body>
-        <h1>Hi, this is a picture of features of python!</h1>
+        <h1>Hi, this is a picture of features of python!</h1> -->
         <!-- {{insert_me}} -->
-        <img src = "{% static "images/py3.jpg" %}" alt="did not show the image">
+        <!-- <img src = "{% static "images/py3.jpg" %}" alt="did not show the image">
+    </body>
+</html> -->
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Django Level Two</title>
+        <link rel="stylesheet" href="{% static "css/mystyles.css" %}"/>
+    </head>
+    <body>
+        <h1>Hi welcome to Django level two!</h1>
+        <h2>Here are your access records: </h2>
+
+        <div class="djangtwo">
+            {% if access_records %}
+            <table>
+                <thead>
+                    <th>Site Name</th>
+                    <th>Date Accessed</th>
+                </thead>
+
+                {% for acc in access_records %}
+                <tr>
+                    <td>{{ acc.name }}</td>
+                    <td>{{acc.date }}</td>
+                </tr>
+                {% endfor %}                
+            </table>
+            {% else %}
+                <p>NO ACCESS RECORD</p>
+            {% endif %}
+
+        </div>
     </body>
 </html>

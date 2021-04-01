@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import re_path,path,include
-from first_app import views
+# from first_app import views
+from apptwo import views
+
 
 urlpatterns = [
     re_path(r'^$',views.index,name='index'),
-    re_path(r'^mynewextension/',include('first_app.urls')),
+    # re_path(r'^mynewextension/',include('first_app.urls')),
     path('admin/', admin.site.urls),
+    re_path(r'^formpage/',views.form_name_view,name='form_name')
 ]
